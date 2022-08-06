@@ -1,11 +1,17 @@
 #ifndef TEST_SANITIZER_USEAFTER_FREE_H
 #define TEST_SANITIZER_USEAFTER_FREE_H
 
+#include <iostream>
+using namespace std;
 
-
-void useAfterFree() {
+class Top{
     
-
+};
+// 
+void useAfterFree(int *dataInAndOut) 
+{
+    dataInAndOut = new int(10);
+    cout << "useAfterFree" << endl;
 }
 
 
