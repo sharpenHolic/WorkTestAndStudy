@@ -43,7 +43,12 @@ private:
     Common() {}
 
     public:
-    void callTestAsan(int, int *ptr = nullptr);
+    // call testcase of Asan
+    void callTestAsan(int, int *ptr = nullptr); 
+    // show start menu
+    void showStartMenu();
+    // select option
+    void selectOption(int option);
 };
 
 //

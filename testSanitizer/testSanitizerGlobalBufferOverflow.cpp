@@ -3,5 +3,5 @@
 
 void globalBufferOverflow()
 { 
-    cout << "heapBufferOverflow" << endl;
+    cout << "globalBufferOverflow" << endl;
 }
