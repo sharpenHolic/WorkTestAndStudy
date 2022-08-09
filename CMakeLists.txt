@@ -15,7 +15,7 @@ add_subdirectory(testSanitizer)
 add_subdirectory(common)
 
 #asan option
-option(ASAN_SWITCH "if turn on asan" ON) 
+option(ASAN_SWITCH "if turn on asan") 
 if(ASAN_SWITCH)
     message("ASAN is defined,vlaue:${ASAN_SWITCH}")
     set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS} -fsanitize=leak -fsanitize=address -fno-omit-frame-pointer -static-libasan")

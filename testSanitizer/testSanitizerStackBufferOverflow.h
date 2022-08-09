@@ -9,9 +9,22 @@
 #ifndef TEST_SANITIZER_STACK_BUFFER_OVERFLOW_H
 #define TEST_SANITIZER_STACK_BUFFER_OVERFLOW_H
 
-#include"testSanitizerBase.h"
+#include "testSanitizerBase.h"
 
-// Stack buffer overflow
-void stackBufferOverflow();
+class testSanitizerStackBufferOverflow
+{
+private:
+    /* data */
+public:
+    testSanitizerStackBufferOverflow(){};
+    ~testSanitizerStackBufferOverflow(){};
+
+public:
+    virtual void callTestFunc(int *ptr = nullptr /*if we want the memory changed*/);
+    // Stack buffer overflow
+    void stackBufferOverflow();
+};
+
+
 
 #endif // TEST_SANITIZER_STACK_BUFFER_OVERFLOW_H

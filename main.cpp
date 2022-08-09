@@ -15,41 +15,41 @@
 #include <time.h>
 using namespace std;
 
-
-
-
 int main(int argc, char **argv)
 {
-    Common& com = Common::getInstance();
+    Common &com = Common::getInstance();
 
     // program start
     clock_t timeStart, timeStop;
     timeStart = clock();
 
-    while(true) {
+    while (true)
+    {
         com.showStartMenu();
         break;
     }
 
-    /*********************************/
-    /*********Use after free**********/
-    /*********************************/
+    /***************************************/
+    /**************Use after free***********/
+    /***************************************/
     int *useAfterFreePtr = nullptr;
     com.callTestAsan(TestAsanType::USE_AFTER_FREE, useAfterFreePtr);
-    cout << *useAfterFreePtr << endl;
-    
+    //cout << *useAfterFreePtr << endl;
 
     /***************************************/
     /*********Heap buffer overflow**********/
     /***************************************/
-
+    com.callTestAsan(TestAsanType::HEAP_BUFFER_OVERFLOW);
 
     /***************************************/
     /*********Stack buffer overflow*********/
     /***************************************/
-    // com.callTestAsan(TestAsanType::STACK_BUFFER_OVERFLOW);
+    com.callTestAsan(TestAsanType::STACK_BUFFER_OVERFLOW);
 
-
+    /***************************************/
+    /*********Global buffer overflow*********/
+    /***************************************/
+    com.callTestAsan(TestAsanType::GLOBAL_BUFFER_OVERFLOW);
 
     // program end
     timeStop = clock();

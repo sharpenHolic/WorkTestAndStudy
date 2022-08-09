@@ -10,6 +10,7 @@
 #include "../testSanitizer/testSanitizerGlobalBufferOverflow.h"
 #include "../testSanitizer/testSanitizerUseafterFree.h"
 #include "../testSanitizer/testSanitizerStackBufferOverflow.h"
+#include "../testSanitizer/testSanitizerHeapBufferOverflow.h"
 
 void Common::callTestAsan(int option, int *ptr)
 {
@@ -19,13 +20,13 @@ void Common::callTestAsan(int option, int *ptr)
         testSanitizerUseafterFree().callTestFunc();
         break;
     case TestAsanType::HEAP_BUFFER_OVERFLOW:
-        /* code */
+        testSanitizerHeapBufferOverflow().callTestFunc();
         break;
     case TestAsanType::STACK_BUFFER_OVERFLOW:
-        stackBufferOverflow();
+        testSanitizerStackBufferOverflow().callTestFunc();
         break;
     case TestAsanType::GLOBAL_BUFFER_OVERFLOW:
-        /* code */
+        testSanitizerGlobalBufferOverflow().callTestFunc();
         break;
     case TestAsanType::USE_AFTER_RETURN:
         /* code */
@@ -56,5 +57,4 @@ void Common::showStartMenu()
 
 void selectOption(int option)
 {
-
 }

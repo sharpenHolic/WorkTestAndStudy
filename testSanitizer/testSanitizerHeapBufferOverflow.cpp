@@ -1,6 +1,11 @@
 #include "testSanitizerHeapBufferOverflow.h"
 
-void heapBufferOverflow()
+void testSanitizerHeapBufferOverflow::callTestFunc(int *ptr)
+{
+    heapBufferOverflow();
+}
+
+void testSanitizerHeapBufferOverflow::heapBufferOverflow()
 {
     
     cout << "heapBufferOverflow" << endl;

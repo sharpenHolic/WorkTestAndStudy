@@ -1,4 +1,4 @@
-# ./testSanitizer/CMakeLists.txt
+# ./common/CMakeLists.txt
 aux_source_directory(.  commonLib)
 include_directories(${PROJECT_SOURCE_DIR}/common)
 set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)

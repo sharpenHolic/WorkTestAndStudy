@@ -8,7 +8,13 @@
  */
 #include "testSanitizerStackBufferOverflow.h"
 
-void stackBufferOverflow() {
+void testSanitizerStackBufferOverflow::callTestFunc(int *ptr)
+{
+    stackBufferOverflow();
+}
+
+void testSanitizerStackBufferOverflow::stackBufferOverflow()
+{
 
     char str[4] = {0};
     strcpy(str, "1234");
